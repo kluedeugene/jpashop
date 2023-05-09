@@ -31,7 +31,7 @@ public class MemberService {
     @Transactional(readOnly = false)        //기본값 false
     public Long join(Member member) {
 
-        validateDuplicateMember(member);
+        validateDuplicateMember(member);       //중복 회원 검증
         memberRepository.save(member);
         return member.getId();
     }
